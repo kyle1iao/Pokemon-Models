@@ -3,7 +3,15 @@ This repository is for projects that apply data science, machine learning, and d
 
 ![Lotad](https://www.serebii.net/swordshield/pokemon/270.png)
 
-Potential Projects:
- - Type classifiers
- - Pokemon label prediction
+Projects in this repository
+----------------------
+
+- Pokemon fire and water type classifier
+- Pokemon image classifier + short script to predict Pokemon name from API image
+
+
+Potential projects for the future
+----------------------
+
  - Pokemon name generator
+ - Pokemon generator (creates new Pokemon)
