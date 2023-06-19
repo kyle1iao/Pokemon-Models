@@ -15,3 +15,11 @@ Potential projects for the future
 
  - Pokemon name generator
  - Pokemon generator (creates new Pokemon)
+
+ Data sources
+----------------------
+[Pokemon Image Dataset](https://www.kaggle.com/datasets/vishalsubbiah/pokemon-images-and-types/code?datasetId=92703&sortBy=voteCount)
+- Used for fire water type classifier
+
+[7,000 Labeled Pokemon](https://www.kaggle.com/datasets/lantian773030/pokemonclassification?datasetId=410745&sortBy=voteCount)
+- Used for image classifier
