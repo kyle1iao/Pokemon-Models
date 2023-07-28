@@ -5,5 +5,4 @@ model_pokemon.h5
 toPredict.png
 test.ipynb
 node_modules
-requirements.txt
 venv_streamlit_app
