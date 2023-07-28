@@ -51,6 +51,10 @@ def predict_pokemon(image_array):
 
 
 def main():
+    st.set_page_config(
+        page_title="PokéScan", page_icon="🔍", initial_sidebar_state="collapsed"
+    )
+
     st.title("PokéScan")
     st.header("Ever wonder what Pokémon you would be?")
 
