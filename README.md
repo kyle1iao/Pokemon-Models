@@ -8,7 +8,7 @@ This repository is for projects that apply data science, machine learning, and d
 
 - Pokemon fire and water type classifier
 - Pokemon image classifier + short script to predict Pokemon name from API image
-- Streamlit web app that allows for users to input their own images and receive predictions!
+- [Streamlit web app](https://pokemon-models-quqydfiphp7hroukdaveqd.streamlit.app/) that allows for users to input their own images and receive predictions!
 
 ## Potential projects for the future
 
