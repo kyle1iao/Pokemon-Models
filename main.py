@@ -72,8 +72,8 @@ def main():
         }
         .logo-img {
             float:right;
-            width: 50px;
-            height: 50px;
+            width: calc(1.4rem + 3.0vw);
+            height: calc(1.4rem + 3.0vw);
             margin-left: 20px;
             margin-bottom: 20px;
         }
