@@ -10,6 +10,7 @@ from PIL import Image
 from tensorflow.keras.preprocessing.image import load_img, img_to_array
 from keras.preprocessing.image import ImageDataGenerator
 import time
+import base64
 
 
 # Load model
@@ -54,7 +55,44 @@ def predict_pokemon(image_array):
 
 
 def main():
-    st.title("PokéScan")
+    LOGO_IMAGE = "sphealimage.png"
+
+    st.markdown(
+        """
+        <style>
+        .container {
+            display: flex;
+            align-items: center;
+        }
+        .logo-text {
+            font-family: "Source Sans Pro", sans-serif;
+            font-weight: 650;
+            color: rgb(250, 250, 250);
+            font-size: calc(1.4rem + 3.0vw);
+        }
+        .logo-img {
+            float:right;
+            width: 50px;
+            height: 50px;
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
+
+    st.markdown(
+        f"""
+        <div class="container">
+            <p class="logo-text">PokéScan</p>
+            <img class="logo-img" src="data:image/png;base64,{base64.b64encode(open(LOGO_IMAGE, "rb").read()).decode()}">
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+    # st.title("PokéScan")
     st.header("Ever wonder what Pokémon you would be?")
 
     uploaded_file = st.file_uploader(
