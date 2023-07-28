@@ -1,6 +1,5 @@
 best_model.h5
 data/PokemonData/
-data/ImageSplit/
 toPredict.png
 test.ipynb
 node_modules
