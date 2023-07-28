@@ -8,10 +8,6 @@ from tensorflow.keras.preprocessing.image import load_img, img_to_array
 from keras.preprocessing.image import ImageDataGenerator
 import time
 
-st.set_page_config(
-    page_title="PokéScan", page_icon="🔍", initial_sidebar_state="collapsed"
-)
-
 
 # Load model
 @st.cache_resource
@@ -55,6 +51,10 @@ def predict_pokemon(image_array):
 
 
 def main():
+    st.set_page_config(
+        page_title="PokéScan", page_icon="🔍", initial_sidebar_state="collapsed"
+    )
+
     st.title("PokéScan")
     st.header("Ever wonder what Pokémon you would be?")
 
