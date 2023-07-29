@@ -11,6 +11,9 @@ from tensorflow.keras.preprocessing.image import load_img, img_to_array
 from keras.preprocessing.image import ImageDataGenerator
 import time
 import base64
+import requests
+from PIL import Image
+from io import BytesIO
 
 
 # Load model
@@ -52,6 +55,23 @@ def predict_pokemon(image_array):
     class_labels = {v: k for k, v in class_labels.items()}
     predicted_label = class_labels[np.argmax(predictions)]
     return predicted_label
+
+
+def get_example(pokemon):
+    pokemon = pokemon.lower()
+    url = f"https://pokeapi.co/api/v2/pokemon/{pokemon}"
+    r = requests.get(url)
+
+    data = r.json()
+    forms = data["forms"][0]["url"]
+
+    form_link = requests.get(forms)
+    content = form_link.json()
+    image_url = content["sprites"]["front_default"]
+
+    response = requests.get(image_url)
+    image = Image.open(BytesIO(response.content))
+    return image
 
 
 def main():
@@ -128,6 +148,12 @@ def main():
         # Make a prediction and display the result
         predicted_pokemon = predict_pokemon(image_array)
         st.write("## Predicted Pokémon:", predicted_pokemon)
+
+        col1, col2, col3 = st.columns(3)
+        with col1:
+            st.write("In-game pixel sprite of", predicted_pokemon, ":")
+        with col2:
+            st.image(get_example(predicted_pokemon), width=200)
 
 
 if __name__ == "__main__":
