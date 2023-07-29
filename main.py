@@ -17,7 +17,7 @@ from io import BytesIO
 
 
 # Load model
-@st.cache_resource
+@st.cache_resource()
 def load_model():
     class CustomGlobalAveragePooling2D(Layer):
         def __init__(self, **kwargs):
@@ -30,9 +30,7 @@ def load_model():
         "CustomGlobalAveragePooling2D"
     ] = CustomGlobalAveragePooling2D
 
-    model = tf.keras.models.load_model("model_pokemon.h5")
-
-    return model
+    return tf.keras.models.load_model("model_pokemon.h5")
 
 
 model = load_model()
