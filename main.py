@@ -116,8 +116,12 @@ def main():
     # st.title("PokéScan")
     st.header("Ever wonder what Pokémon you would be?")
 
+    st.write(
+        "PokéScan is a model trained with over 7,000 images of the original 150 generation I pokémon. It was built to answer the age-old question: Who's that pokémon?"
+    )
+
     uploaded_file = st.file_uploader(
-        "Upload a selfie to find out!",
+        "Upload a selfie or other image!",
         type=["jpg", "png"],
         help="Supported file types include jpeg and png.",
     )
@@ -151,10 +155,13 @@ def main():
         st.write("## Predicted Pokémon:", predicted_pokemon)
 
         col1, col2, col3 = st.columns(3)
-        with col1:
-            st.write("In-game pixel sprite of", predicted_pokemon, ":")
-        with col2:
-            st.image(get_example(predicted_pokemon), width=200)
+        with st.spinner("Loading sprite..."):
+            time.sleep(1)
+            with col1:
+                st.write("In-game pixel sprite of", predicted_pokemon, ":")
+            with col2:
+                sprite = get_example(predicted_pokemon)
+                st.image(sprite, width=200)
 
 
 if __name__ == "__main__":
