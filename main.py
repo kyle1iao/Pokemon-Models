@@ -33,7 +33,10 @@ def load_model():
     return tf.keras.models.load_model("model_pokemon.h5")
 
 
-model = load_model()
+try:
+    model = load_model()
+except Exception as e:
+    st.error(f"error here")
 
 
 @st.cache_resource
